@@ -26,7 +26,8 @@
     font-size: 3em;
     margin-bottom: 20px;
     position: relative;
-    display: inline-block;
+    display: block; /* Changed from inline-block to block */
+    width: 100%; /* Ensure it takes full width */
 
     @media (max-width: 768px) {
       font-size: 2.5em;
@@ -117,29 +118,17 @@
 
 /* Typing effect */
 .typing-effect {
-  overflow: hidden;
-  border-right: 2px solid $primary-color;
-  white-space: nowrap; /* Default to nowrap */
+  border-right: 2px solid $primary-color; /* Keep the blinking caret */
+  white-space: normal; /* Allow text to wrap by default */
+  word-break: break-word; /* Break long words if necessary */
 
-  /* Apply typing animation only on larger screens */
-  @media (min-width: 481px) {
-    animation: typing 3s steps(40, end) forwards, blink-caret .75s step-end infinite;
-    width: 0; /* Start with 0 width for typing effect */
-  }
+  /* Blink caret animation for all screens, if desired */
+  animation: blink-caret .75s step-end infinite;
 
-  /* Adjust for smaller screens */
+  /* On smaller screens, remove caret if it looks bad */
   @media (max-width: 480px) {
-    white-space: normal; /* Allow text to wrap on small screens */
-    word-break: break-word; /* Break long words */
-    animation: none; /* Disable typing animation on very small screens */
-    width: auto; /* Full width on small screens */
     border-right: none; /* Remove blinking caret on small screens */
   }
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
 }
 
 @keyframes blink-caret {
