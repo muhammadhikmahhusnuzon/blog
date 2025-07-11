@@ -4,3 +4,21 @@
 @import "base";
 @import "components";
 @import "layout";
+
+:root {
+  // Light mode variables
+  --primary-color: #{$light-primary-color};
+  --secondary-color: #{$light-secondary-color};
+  --text-color: #{$light-text-color};
+  --background-color: #{$light-background-color};
+  --border-color: #{$light-border-color};
+}
+
+body.dark-mode {
+  // Dark mode overrides
+  --primary-color: #{$dark-primary-color};
+  --secondary-color: #{$dark-secondary-color};
+  --text-color: #{$dark-text-color};
+  --background-color: #{$dark-background-color};
+  --border-color: #{$dark-border-color};
+}

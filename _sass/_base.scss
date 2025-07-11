@@ -12,8 +12,8 @@ html {
 
 body {
   font-family: $font-mono;
-  background-color: $background-color;
-  color: $text-color;
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -23,12 +23,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-display;
-  color: $primary-color;
-  text-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color;
+  color: var(--primary-color);
+  text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
 }
 
 a {
-  color: $secondary-color;
+  color: var(--secondary-color);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -113,7 +113,7 @@ table {
 table th,
 table td {
   padding: 0.5em;
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   text-align: left;
 }
 

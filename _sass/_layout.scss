@@ -1,18 +1,18 @@
 /* _sass/_layout.scss */
 
 .site-header {
-  background-color: darken($background-color, 5%);
-  border-bottom: 2px solid $primary-color;
+  background-color: darken(var(--background-color), 5%);
+  border-bottom: 2px solid var(--primary-color);
   padding: 20px 0;
   text-align: center;
 
   .site-title {
     margin: 0;
     a {
-      color: $primary-color;
+      color: var(--primary-color);
       text-decoration: none;
       font-size: 2em;
-      text-shadow: 0 0 5px $primary-color;
+      text-shadow: 0 0 5px var(--primary-color);
 
       @media (max-width: 480px) {
         font-size: 1.5em;
@@ -41,12 +41,9 @@
         }
 
         a {
-          color: $text-color;
-          text-decoration: none;
-          font-size: 1.1em;
-          transition: color 0.3s ease;
+          color: var(--text-color);
           &:hover {
-            color: $secondary-color;
+            color: var(--secondary-color);
           }
         }
       }
@@ -55,14 +52,14 @@
 }
 
 .site-footer {
-  background-color: darken($background-color, 5%);
-  border-top: 2px solid $primary-color;
+  background-color: darken(var(--background-color), 5%);
+  border-top: 2px solid var(--primary-color);
   padding: 20px 0;
   text-align: center;
   margin-top: 40px;
   p {
     margin: 0;
-    color: lighten($text-color, 20%);
+    color: var(--text-color);
   }
 }
 

@@ -1,10 +1,18 @@
 /* _sass/_variables.scss */
 
-$primary-color: #3498db; // Soft blue
-$secondary-color: #2ecc71; // Soft green
-$text-color: #333333; // Dark grey for text
-$background-color: #f8f8f8; // Light grey background
-$border-color: #cccccc; // Light grey for borders
+// Light Mode Colors
+$light-primary-color: #3498db; // Soft blue
+$light-secondary-color: #2ecc71; // Soft green
+$light-text-color: #333333; // Dark grey for text
+$light-background-color: #f8f8f8; // Light grey background
+$light-border-color: #cccccc; // Light grey for borders
+
+// Dark Mode Colors (new comfortable dark theme)
+$dark-primary-color: #9b59b6; // Amethyst
+$dark-secondary-color: #2980b9; // Belize Hole
+$dark-text-color: #ecf0f1; // Clouds
+$dark-background-color: #2c3e50; // Wet Asphalt
+$dark-border-color: #7f8c8d; // Asbestos
 $glitch-color-1: #ff00ff; // Magenta
 $glitch-color-2: #00ffff; // Cyan
 
