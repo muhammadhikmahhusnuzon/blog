@@ -1,0 +1,44 @@
+/* _sass/_base.scss */
+
+body {
+  font-family: $font-mono;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll from glitch effect */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  color: $primary-color;
+  text-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color;
+}
+
+a {
+  color: $secondary-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Scanline effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, transparent 0px, transparent 1px, rgba(0, 255, 0, 0.05) 1px, rgba(0, 255, 0, 0.05) 2px);
+  pointer-events: none;
+  z-index: 9999;
+}

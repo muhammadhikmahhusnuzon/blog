@@ -1,0 +1,144 @@
+/* _sass/_components.scss */
+
+.btn {
+  display: inline-block;
+  background-color: $primary-color;
+  color: $background-color;
+  padding: 10px 20px;
+  border: 2px solid $primary-color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color;
+
+  &:hover {
+    background-color: $background-color;
+    color: $primary-color;
+    box-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 0;
+
+  .hero-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5em;
+    color: $secondary-color;
+    margin-bottom: 30px;
+  }
+
+  .hero-description {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+  }
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+  &:before,
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before {
+    left: 2px;
+    text-shadow: -2px 0 $glitch-color-1;
+    clip: rect(24px, 350px, 8px, 0);
+    animation: glitch-anim-1 2s infinite alternate-reverse;
+  }
+
+  &:after {
+    left: -2px;
+    text-shadow: -2px 0 $glitch-color-2;
+    clip: rect(24px, 350px, 8px, 0);
+    animation: glitch-anim-2 3s infinite alternate-reverse;
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip: rect(30px, 9999px, 20px, 0); }
+  10% { clip: rect(10px, 9999px, 40px, 0); }
+  20% { clip: rect(50px, 9999px, 10px, 0); }
+  30% { clip: rect(20px, 9999px, 60px, 0); }
+  40% { clip: rect(40px, 9999px, 30px, 0); }
+  50% { clip: rect(15px, 9999px, 55px, 0); }
+  60% { clip: rect(35px, 9999px, 25px, 0); }
+  70% { clip: rect(5px, 9999px, 45px, 0); }
+  80% { clip: rect(45px, 9999px, 15px, 0); }
+  90% { clip: rect(25px, 9999px, 50px, 0); }
+  100% { clip: rect(0px, 9999px, 30px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(10px, 9999px, 50px, 0); }
+  15% { clip: rect(40px, 9999px, 20px, 0); }
+  30% { clip: rect(5px, 9999px, 35px, 0); }
+  45% { clip: rect(55px, 9999px, 10px, 0); }
+  60% { clip: rect(25px, 9999px, 45px, 0); }
+  75% { clip: rect(30px, 9999px, 15px, 0); }
+  90% { clip: rect(40px, 9999px, 5px, 0); }
+  100% { clip: rect(0px, 9999px, 60px, 0); }
+}
+
+/* Typing effect */
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid $primary-color;
+  animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $primary-color; }
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    background-color: lighten($background-color, 5%);
+    border: 1px solid $border-color;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $border-color;
+
+    h2 {
+      margin-top: 0;
+      a {
+        color: $primary-color;
+        &:hover {
+          text-decoration: none;
+          text-shadow: 0 0 10px $primary-color;
+        }
+      }
+    }
+
+    .post-meta {
+      font-size: 0.9em;
+      color: lighten($text-color, 20%);
+    }
+  }
+}

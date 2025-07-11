@@ -1,0 +1,72 @@
+/* _sass/_layout.scss */
+
+.site-header {
+  background-color: darken($background-color, 5%);
+  border-bottom: 2px solid $primary-color;
+  padding: 20px 0;
+  text-align: center;
+
+  .site-title {
+    margin: 0;
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-size: 2em;
+      text-shadow: 0 0 5px $primary-color;
+    }
+  }
+
+  .site-nav {
+    margin-top: 10px;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin: 0 15px;
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-size: 1.1em;
+          transition: color 0.3s ease;
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.site-footer {
+  background-color: darken($background-color, 5%);
+  border-top: 2px solid $primary-color;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+  p {
+    margin: 0;
+    color: lighten($text-color, 20%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .site-header .site-nav ul {
+    flex-direction: column;
+    li {
+      margin: 5px 0;
+    }
+  }
+
+  .hero .hero-title {
+    font-size: 2em;
+  }
+
+  .hero .hero-subtitle {
+    font-size: 1.2em;
+  }
+}
