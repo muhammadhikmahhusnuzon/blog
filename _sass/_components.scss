@@ -118,9 +118,23 @@
 /* Typing effect */
 .typing-effect {
   overflow: hidden;
-  white-space: nowrap;
   border-right: 2px solid $primary-color;
-  animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+  white-space: nowrap; /* Default to nowrap */
+
+  /* Apply typing animation only on larger screens */
+  @media (min-width: 481px) {
+    animation: typing 3s steps(40, end) forwards, blink-caret .75s step-end infinite;
+    width: 0; /* Start with 0 width for typing effect */
+  }
+
+  /* Adjust for smaller screens */
+  @media (max-width: 480px) {
+    white-space: normal; /* Allow text to wrap on small screens */
+    word-break: break-word; /* Break long words */
+    animation: none; /* Disable typing animation on very small screens */
+    width: auto; /* Full width on small screens */
+    border-right: none; /* Remove blinking caret on small screens */
+  }
 }
 
 @keyframes typing {
@@ -132,6 +146,49 @@
   from, to { border-color: transparent }
   50% { border-color: $primary-color; }
 }
+
+/* Adjust glitch effect for responsiveness */
+.glitch {
+  @media (max-width: 480px) {
+    &:before,
+    &:after {
+      clip: auto; /* Remove clipping on small screens */
+      text-shadow: none; /* Remove text shadow on small screens */
+      animation: none; /* Disable glitch animation on small screens */
+    }
+  }
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    background-color: lighten($background-color, 5%);
+    border: 1px solid $border-color;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $border-color;
+
+    h2 {
+      margin-top: 0;
+      a {
+        color: $primary-color;
+        &:hover {
+          text-decoration: none;
+          text-shadow: 0 0 10px $primary-color;
+        }
+      }
+    }
+
+    .post-meta {
+      font-size: 0.9em;
+      color: lighten($text-color, 20%);
+    }
+  }
+}
+
 
 .post-list {
   list-style: none;
