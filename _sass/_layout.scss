@@ -13,6 +13,10 @@
       text-decoration: none;
       font-size: 2em;
       text-shadow: 0 0 5px $primary-color;
+
+      @media (max-width: 480px) {
+        font-size: 1.5em;
+      }
     }
   }
 
@@ -25,8 +29,17 @@
       display: flex;
       justify-content: center;
 
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
       li {
         margin: 0 15px;
+
+        @media (max-width: 768px) {
+          margin: 5px 0;
+        }
+
         a {
           color: $text-color;
           text-decoration: none;

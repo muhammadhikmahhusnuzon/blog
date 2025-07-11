@@ -28,6 +28,14 @@ a {
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 }
 
 /* Scanline effect */
@@ -41,4 +49,35 @@ body::before {
   background: repeating-linear-gradient(to bottom, transparent 0px, transparent 1px, rgba(0, 255, 0, 0.05) 1px, rgba(0, 255, 0, 0.05) 2px);
   pointer-events: none;
   z-index: 9999;
+}
+
+/* General font size adjustments for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95em;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
 }
