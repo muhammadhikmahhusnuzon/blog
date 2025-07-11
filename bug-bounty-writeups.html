@@ -1,0 +1,19 @@
+---
+layout: default
+title: Bug Bounty Writeups
+permalink: /bug-bounty-writeups/
+---
+
+<h1>Bug Bounty Writeups</h1>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    {% if post.categories contains 'bug-bounty' %}
+      <li>
+        <h2><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
