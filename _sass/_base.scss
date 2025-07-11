@@ -1,5 +1,15 @@
 /* _sass/_base.scss */
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: $font-mono;
   background-color: $background-color;
@@ -8,6 +18,7 @@ body {
   padding: 0;
   line-height: 1.6;
   overflow-x: hidden; /* Prevent horizontal scroll from glitch effect */
+  word-break: break-word; /* Break long words to prevent overflow */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,6 +45,7 @@ a {
   }
 
   @media (max-width: 480px) {
+    max-width: 100%; /* Remove max-width on small screens */
     padding: 10px;
   }
 }
@@ -81,3 +93,35 @@ body::before {
     font-size: 1.2em;
   }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Ensures images behave as block elements */
+}
+
+/* Responsive tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  display: block; /* Allows table to scroll horizontally */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents content from wrapping inside cells */
+}
+
+table th,
+table td {
+  padding: 0.5em;
+  border: 1px solid $border-color;
+  text-align: left;
+}
+
+/* Responsive code blocks */
+pre,
+code {
+  word-wrap: break-word;
+  white-space: pre-wrap; /* Allows code to wrap */
+  overflow-x: auto; /* Enables horizontal scrolling for long lines */
+}
+
