@@ -4,13 +4,7 @@
   background-color: var(--header-footer-bg);
   border-bottom: 2px solid var(--primary-color);
   padding: 20px 0;
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-  }
+  text-align: center;
 
   .site-title {
     margin: 0;
@@ -27,7 +21,7 @@
   }
 
   .site-nav {
-    margin-top: 0; /* Reset margin as flexbox handles spacing */
+    margin-top: 10px;
     ul {
       list-style: none;
       padding: 0;
