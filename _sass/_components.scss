@@ -219,15 +219,26 @@
   background-color: var(--primary-color);
   color: var(--background-color);
   border: 1px solid var(--primary-color);
-  padding: 8px 15px;
   cursor: pointer;
   font-size: 0.9em;
   margin-top: 10px;
   transition: all 0.3s ease;
-  border-radius: 5px;
+  border-radius: 50%; /* Make it circular */
+  width: 40px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 0; /* Remove padding */
 
   &:hover {
     background-color: var(--background-color);
     color: var(--primary-color);
+  }
+
+  .theme-icon {
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    display: none; /* Hidden by default, controlled by JS */
   }
 }
