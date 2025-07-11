@@ -11,6 +11,7 @@
   --secondary-color: #{$light-secondary-color};
   --text-color: #{$light-text-color};
   --background-color: #{$light-background-color};
+  --header-footer-bg: #{$light-header-footer-bg};
   --border-color: #{$light-border-color};
 }
 
@@ -20,5 +21,6 @@ body.dark-mode {
   --secondary-color: #{$dark-secondary-color};
   --text-color: #{$dark-text-color};
   --background-color: #{$dark-background-color};
+  --header-footer-bg: #{$dark-header-footer-bg};
   --border-color: #{$dark-border-color};
 }

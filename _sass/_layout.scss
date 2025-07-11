@@ -1,7 +1,7 @@
 /* _sass/_layout.scss */
 
 .site-header {
-  background-color: darken(var(--background-color), 5%);
+  background-color: var(--header-footer-bg);
   border-bottom: 2px solid var(--primary-color);
   padding: 20px 0;
   text-align: center;
@@ -52,7 +52,7 @@
 }
 
 .site-footer {
-  background-color: darken(var(--background-color), 5%);
+  background-color: var(--header-footer-bg);
   border-top: 2px solid var(--primary-color);
   padding: 20px 0;
   text-align: center;
